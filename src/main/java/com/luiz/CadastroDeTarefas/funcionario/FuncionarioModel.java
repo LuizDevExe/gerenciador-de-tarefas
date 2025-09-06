@@ -1,5 +1,6 @@
 package com.luiz.CadastroDeTarefas.funcionario;
 
+import com.luiz.CadastroDeTarefas.tarefa.TarefaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,4 +28,8 @@ public class FuncionarioModel {
     private String email;
 
     private String cargo;
+
+    @ManyToOne
+    @JoinColumn(name = "tarefa_id")
+    private TarefaModel tarefa;
 }

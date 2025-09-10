@@ -27,7 +27,7 @@ public class FuncionarioModel {
     @Column(unique = true)
     private String email;
 
-    private String cargo;
+    private String cargo_funcionario    ;
 
     @ManyToOne
     @JoinColumn(name = "tarefa_id")

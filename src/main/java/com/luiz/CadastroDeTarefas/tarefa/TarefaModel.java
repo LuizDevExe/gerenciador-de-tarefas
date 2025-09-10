@@ -20,20 +20,20 @@ public class TarefaModel {
     private Date prazo;
 
     @Enumerated(EnumType.STRING)
-    private Priodidade priodidade;
+    private Prioridade prioridade;
 
 
     @OneToMany(mappedBy = "tarefa")
     private List<FuncionarioModel> funcionarios;
 
-    private enum Priodidade{
+    private enum Prioridade{
         BAIXA("Baixa"),
         MEDIA("Media"),
         URGENTE("Urgente");
 
         private String descricao;
 
-        Priodidade(String descricao){
+        Prioridade(String descricao){
             this.descricao = descricao;
         }
     }

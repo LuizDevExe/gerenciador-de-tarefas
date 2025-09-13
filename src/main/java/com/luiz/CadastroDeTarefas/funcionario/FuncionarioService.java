@@ -14,12 +14,21 @@ public class FuncionarioService {
         this.funcionarioRepository = funcionarioRepository;
     }
 
+
+    // Lista Todos os funcionários
     public List<FuncionarioModel> listarFuncionarios() {
         return funcionarioRepository.findAll();
     }
 
+
+    // Lista  funcionário por ID
     public FuncionarioModel listarFuncionarioPorId(Long id) {
         Optional<FuncionarioModel> funcionario = funcionarioRepository.findById(id);
         return funcionario.orElse(null);
+    }
+
+    // Cria um novo funcionário
+    public FuncionarioModel salvarFuncionario(FuncionarioModel funcionarioModel) {
+        return funcionarioRepository.save(funcionarioModel);
     }
 }

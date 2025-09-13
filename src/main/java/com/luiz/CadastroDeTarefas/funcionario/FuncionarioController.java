@@ -30,5 +30,10 @@ public class FuncionarioController {
         return funcionarioService.listarFuncionarioPorId(id);
     }
 
+    @PostMapping("/criar")
+    public void criarFuncionario(@RequestBody FuncionarioModel funcionarioModel){
+        funcionarioService.salvarFuncionario(funcionarioModel);
+    }
+
 
 }

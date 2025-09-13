@@ -1,6 +1,7 @@
 package com.luiz.CadastroDeTarefas.tarefa;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.luiz.CadastroDeTarefas.funcionario.FuncionarioModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,6 +32,7 @@ public class TarefaModel {
 
 
     @OneToMany(mappedBy = "tarefa")
+    @JsonIgnore
     private List<FuncionarioModel> funcionarios;
 
     private enum Prioridade{

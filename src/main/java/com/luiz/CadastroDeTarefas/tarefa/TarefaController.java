@@ -1,9 +1,6 @@
 package com.luiz.CadastroDeTarefas.tarefa;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,10 @@ public class TarefaController {
     @GetMapping("/listar/{id}")
     public TarefaModel listarTarefasPorId(@PathVariable Long id) {
         return tarefaService.listarTarefaPorId(id);
+    }
+
+    @PostMapping("/criar")
+    public TarefaModel criarTarefa(@RequestBody TarefaModel tarefaModel) {
+        return tarefaService.criarTarefa(tarefaModel);
     }
 }

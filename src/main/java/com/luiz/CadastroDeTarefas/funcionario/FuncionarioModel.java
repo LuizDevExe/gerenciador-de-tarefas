@@ -1,5 +1,6 @@
 package com.luiz.CadastroDeTarefas.funcionario;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.luiz.CadastroDeTarefas.tarefa.TarefaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

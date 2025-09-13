@@ -1,9 +1,7 @@
 package com.luiz.CadastroDeTarefas.funcionario;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,4 +24,11 @@ public class FuncionarioController {
     public List<FuncionarioModel> listarFuncionarios(){
         return funcionarioService.listarFuncionarios();
     }
+
+    @GetMapping("/listar/{id}")
+    public FuncionarioModel listarFuncionarioPorId(@PathVariable Long id){
+        return funcionarioService.listarFuncionarioPorId(id);
+    }
+
+
 }

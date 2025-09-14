@@ -37,6 +37,7 @@ O objetivo é gerenciar tarefas dentro de uma empresa, permitindo cadastrar func
 
 ## 🗂️ Estrutura do Projeto
 
+```
 src/
  ├── main/
  │   ├── java/com/luiz/CadastroDeTarefas/
@@ -60,4 +61,5 @@ src/
  │           └── migration/                   # Aqui ficam os scripts de migração do Flyway (versões do banco)
  │
  └── test/                                    # Testes unitários e de integração
+```
       

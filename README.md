@@ -13,6 +13,7 @@ O objetivo é gerenciar tarefas dentro de uma empresa, permitindo cadastrar func
 - **Lombok**
 - **H2 Database**
 - **Maven**
+- **Flyway**
 
 ---
 
@@ -35,3 +36,28 @@ O objetivo é gerenciar tarefas dentro de uma empresa, permitindo cadastrar func
 ---
 
 ## 🗂️ Estrutura do Projeto
+
+src/
+ ├── main/
+ │   ├── java/com/luiz/CadastroDeTarefas/
+ │   │   ├── funcionario/
+ │   │   │   ├── FuncionarioController.java   # Controlador REST (endpoints de funcionário)
+ │   │   │   ├── FuncionarioRepository.java   # Interface JPA para persistência
+ │   │   │   ├── FuncionarioService.java      # Service (onde fica a lógica de negócios da aplicação)
+ │   │   │   └── FuncionarioModel.java        # Entidade mapeada para tabela tb_funcionarios
+ │   │   │
+ │   │   ├── tarefa/
+ │   │   │   ├── TarefaController.java        # Controlador REST (endpoints de tarefa)
+ │   │   │   ├── TarefaRepository.java        # Interface JPA para persistência
+ │   │   │   ├── TarefaService.java           # Service (onde fica a lógica de negócios da aplicação)
+ │   │   │   └── TarefaModel.java             # Entidade mapeada para tabela tb_tarefas
+ │   │   │
+ │   │   └── Application.java                 # Classe principal (ponto de entrada)
+ │   │
+ │   └── resources/
+ │       ├── application.properties           # Configurações do projeto
+ │       └── db/
+ │           └── migration/                   # Aqui ficam os scripts de migração do Flyway (versões do banco)
+ │
+ └── test/                                    # Testes unitários e de integração
+      

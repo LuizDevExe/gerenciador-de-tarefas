@@ -35,5 +35,13 @@ public class FuncionarioController {
         funcionarioService.salvarFuncionario(funcionarioModel);
     }
 
+    @DeleteMapping("/deletar/{id}")
+    public void deletarFuncionarioPorId(@PathVariable Long id){
+        funcionarioService.deletarFuncionarioPorId(id);
+    }
 
+    @PutMapping("/atualizar/{id}")
+    public FuncionarioModel atualizarFuncionario(@PathVariable Long id, @RequestBody FuncionarioModel funcionarioModel){
+        return funcionarioService.atualizarFuncionarioPorId(id, funcionarioModel);
+    }
 }

@@ -32,8 +32,16 @@ public class TarefaService {
     }
 
     // Deleta a tarefa
-
     public void  deletarTarefaPorId(Long id) {
         tarefaRepository.deleteById(id);
+    }
+
+    // Atualiza a tarefa
+    public TarefaModel atualizarTarefaPorId(Long id , TarefaModel tarefaModel) {
+        if(tarefaRepository.existsById(id)) {
+            tarefaModel.setId(id);
+            return  tarefaRepository.save(tarefaModel);
+        }
+        return null;
     }
 }

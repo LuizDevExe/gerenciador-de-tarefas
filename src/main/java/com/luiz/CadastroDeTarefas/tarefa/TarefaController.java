@@ -32,9 +32,15 @@ public class TarefaController {
         return tarefaService.criarTarefa(tarefaModel);
     }
 
+    // DELETE - Deleta tarefa por id
     @DeleteMapping("/deletar/{id}")
     public void deletarTarefaPorId(@PathVariable Long id) {
         tarefaService.deletarTarefaPorId(id);
     }
 
+    // UPDATE - Atualiza tarefa por id de maneira inteiriça
+    @PutMapping("/atualizar/{id}")
+    public TarefaModel atualizarTarefaPorId(@PathVariable Long id, @RequestBody TarefaModel tarefaModel) {
+        return tarefaService.atualizarTarefaPorId(id, tarefaModel);
+    }
 }

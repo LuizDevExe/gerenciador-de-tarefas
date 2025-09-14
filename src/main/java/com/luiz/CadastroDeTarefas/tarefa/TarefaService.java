@@ -15,16 +15,25 @@ public class TarefaService {
         this.tarefaRepository = tarefaRepository;
     }
 
+    // Lista todas as tarefas
     public List<TarefaModel> listarTarefas() {
         return tarefaRepository.findAll();
     }
 
+    // Lista Tarefa por id
     public TarefaModel listarTarefaPorId(Long id) {
         Optional<TarefaModel> tarefa = tarefaRepository.findById(id);
         return tarefa.orElse(null);
     }
 
+    // Cria tarefa
     public TarefaModel criarTarefa(TarefaModel tarefaModel) {
         return tarefaRepository.save(tarefaModel);
+    }
+
+    // Deleta a tarefa
+
+    public void  deletarTarefaPorId(Long id) {
+        tarefaRepository.deleteById(id);
     }
 }

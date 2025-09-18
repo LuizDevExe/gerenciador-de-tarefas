@@ -1,36 +1,20 @@
 package com.luiz.CadastroDeTarefas.funcionario;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.luiz.CadastroDeTarefas.tarefa.TarefaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "tb_funcionarios")
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+public class FuncionarioDTO {
 
-public class FuncionarioModel {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nome;
-
-    @Column(unique = true)
     private String cpf;
-
-    @Column(unique = true)
     private String email;
-
     private String cargo;
-
-    @ManyToOne
-    @JoinColumn(name = "tarefa_id")
     private TarefaModel tarefa;
 }

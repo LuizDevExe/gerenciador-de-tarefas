@@ -21,18 +21,18 @@ public class FuncionarioController {
     }
 
     @GetMapping("/listar")
-    public List<FuncionarioModel> listarFuncionarios(){
+    public List<FuncionarioDTO> listarFuncionarios(){
         return funcionarioService.listarFuncionarios();
     }
 
     @GetMapping("/listar/{id}")
-    public FuncionarioModel listarFuncionarioPorId(@PathVariable Long id){
+    public FuncionarioDTO listarFuncionarioPorId(@PathVariable Long id){
         return funcionarioService.listarFuncionarioPorId(id);
     }
 
     @PostMapping("/criar")
-    public void criarFuncionario(@RequestBody FuncionarioModel funcionarioModel){
-        funcionarioService.salvarFuncionario(funcionarioModel);
+    public void criarFuncionario(@RequestBody FuncionarioDTO funcionarioDTO){
+        funcionarioService.salvarFuncionario(funcionarioDTO);
     }
 
     @DeleteMapping("/deletar/{id}")
@@ -41,7 +41,7 @@ public class FuncionarioController {
     }
 
     @PutMapping("/atualizar/{id}")
-    public FuncionarioModel atualizarFuncionario(@PathVariable Long id, @RequestBody FuncionarioModel funcionarioModel){
-        return funcionarioService.atualizarFuncionarioPorId(id, funcionarioModel);
+    public FuncionarioDTO atualizarFuncionario(@PathVariable Long id, @RequestBody FuncionarioDTO funcionarioDTO){
+        return funcionarioService.atualizarFuncionarioPorId(id, funcionarioDTO);
     }
 }

@@ -16,20 +16,20 @@ public class TarefaController {
 
     // GET - Lista todas as tarefas
     @GetMapping("/listar")
-    public List<TarefaModel> listarTarefas() {
+    public List<TarefaDTO> listarTarefas() {
         return tarefaService.listarTarefas();
     }
 
     // GETBYID - Lista tarefa por id
     @GetMapping("/listar/{id}")
-    public TarefaModel listarTarefasPorId(@PathVariable Long id) {
+    public TarefaDTO listarTarefasPorId(@PathVariable Long id) {
         return tarefaService.listarTarefaPorId(id);
     }
 
     // POST - Cria tarefa
     @PostMapping("/criar")
-    public TarefaModel criarTarefa(@RequestBody TarefaModel tarefaModel) {
-        return tarefaService.criarTarefa(tarefaModel);
+    public TarefaDTO criarTarefa(@RequestBody TarefaDTO tarefaDTO) {
+        return tarefaService.criarTarefa(tarefaDTO);
     }
 
     // DELETE - Deleta tarefa por id
@@ -40,7 +40,7 @@ public class TarefaController {
 
     // UPDATE - Atualiza tarefa por id de maneira inteiriça
     @PutMapping("/atualizar/{id}")
-    public TarefaModel atualizarTarefaPorId(@PathVariable Long id, @RequestBody TarefaModel tarefaModel) {
-        return tarefaService.atualizarTarefaPorId(id, tarefaModel);
+    public TarefaDTO atualizarTarefaPorId(@PathVariable Long id, @RequestBody TarefaDTO tarefaDTO) {
+        return tarefaService.atualizarTarefaPorId(id, tarefaDTO);
     }
 }

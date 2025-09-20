@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class TarefaModel {
     @JsonIgnore
     private List<FuncionarioModel> funcionarios;
 
-    private enum Prioridade{
+    public enum Prioridade{
         BAIXA("Baixa"),
         MEDIA("Media"),
         URGENTE("Urgente");
@@ -44,6 +45,19 @@ public class TarefaModel {
 
         Prioridade(String descricao){
             this.descricao = descricao;
+        }
+
+        public String getDescricao() {
+            return descricao;
+        }
+
+
+        public static Prioridade fromString(String valor) {
+            return Arrays.stream(Prioridade.values())
+                    .filter(p -> p.name().equalsIgnoreCase(valor) ||
+                            p.getDescricao().equalsIgnoreCase(valor))
+                    .findFirst()
+                    .orElseThrow(() -> new IllegalArgumentException("Prioridade inválida: " + valor));
         }
     }
 }
